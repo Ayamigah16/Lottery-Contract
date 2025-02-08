@@ -1,0 +1,23 @@
+{
+  "name": "smart-contract_demo",
+  "version": "1.0.0",
+  "description": "A basic smart contract",
+  "main": "compile.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@truffle/hdwallet-provider": "^2.1.15",
+    "dotenv": "^16.4.7",
+    "ganache": "^7.9.2",
+    "mocha": "^11.1.0",
+    "solc": "^0.4.17",
+    "web3": "^1.2.11"
+  }
+}
