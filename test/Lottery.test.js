@@ -70,7 +70,7 @@ describe('Lottery Contract', () => {
             });
             assert(false);
         } catch (error) {
-            assert.ok(error);
+            assert(error);
         }
     });
 
@@ -81,7 +81,7 @@ describe('Lottery Contract', () => {
             });
             assert(false);
         } catch (error) {
-            assert.ok(error);
+            assert(error);
         }
     });
 
@@ -98,6 +98,11 @@ describe('Lottery Contract', () => {
         const finalBalance = await web3.eth.getBalance(accounts[0]);
         const difference = finalBalance - initialBalance;
 
+        const players = await lottery.methods.getPlayers().call({
+            from: accounts[0]
+        });
+
         assert(difference > web3.utils.toWei('1.8', 'ether'));
+        assert.strictEqual(0, players.length);
     });
 });
